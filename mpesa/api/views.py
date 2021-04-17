@@ -52,3 +52,28 @@ class LNMcallbackurlAPIView(CreateAPIView):
 
         phone_number = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][4]["Value"]
         print(phone_number, "this should be an phone_number")
+
+
+        from datetime import datetime
+
+        str_transaction_date = str(transaction_date)
+        print(str_transaction_date, "this should be an str_transaction_date")
+
+        transaction_datetime = datetime.strptime(str_transaction_date, "%Y%m%d%H%M%S")
+        print(transaction_datetime, "this should be an transaction_datetime")
+
+
+        from mpesa.models import LNMOnline
+
+        myLNMOnlinemodel = LNMOnline.objects.create(
+            CheckoutRequestID=checkout_request_id,
+            MerchantRequestID=merchant_request_id,
+            ResultCode=result_code,
+            ResultDesc=result_description,
+            MpesaReceiptNumber=mpesa_receipt_number,
+            Balance=balance,
+            TransactionDate=transaction_datetime,
+            PhoneNumber=phone_number,
+        )
+
+        myLNMOnlinemodel.save()
