@@ -13,21 +13,26 @@ class LNMcallbackurlAPIView(CreateAPIView):
     def create(self,request):
         print(request.data,"This is request.data")
         """
-        {'Body': 
-            {'stkCallback': 
-               {'MerchantRequestID': '42432-14242808-1',
-                'CheckoutRequestID': 'ws_CO_170420210934368924',
-                'ResultCode': 0, 
-                'ResultDesc': 'The service request is processed successfully.', 
-                'CallbackMetadata': 
-                    {'Item': [{'Name': 'Amount', 'Value': 1.0}, 
-                    {'Name': 'MpesaReceiptNumber', 'Value': 'PDH1WP9EWT'}, 
-                    {'Name': 'Balance'}, {'Name': 'TransactionDate', 'Value': 20210417093515}, 
-                    {'Name': 'PhoneNumber', 'Value': 254718282544}]}   
-                }   
-            }
-        } 
-        """"
+                {'Body':
+                    {'stkCallback':
+                    {
+                        'CheckoutRequestID': 'ws_CO_DMZ_401669274_11032019190235305',
+                        'MerchantRequestID': '19927-3244045-1',
+                        'ResultCode': 0,
+                        'ResultDesc': 'The service request is processed successfully.',
+                        'CallbackMetadata': {
+                                                'Item': [
+                                                        {'Name': 'Amount', 'Value': 1.0},
+                                                        {'Name': 'MpesaReceiptNumber', 'Value': 'NCB1FW1DFZ'},
+                                                        {'Name': 'Balance'},
+                                                        {'Name': 'TransactionDate', 'Value': 20190311190244},
+                                                        {'Name': 'PhoneNumber', 'Value': 254718821114}
+                                                        ]
+                                            }
+                                            }
+                        }
+                }
+        """
         merchant_request_id = request.data["Body"]["stkCallback"]["MerchantRequestID"]
         print(merchant_request_id, "this should be MerchantRequestID")
         checkout_request_id = request.data["Body"]["stkCallback"]["CheckoutRequestID"]
