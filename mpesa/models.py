@@ -13,4 +13,4 @@ class LNMOnline(models.Model):
     PhoneNumber = models.CharField(max_length=13, blank=True, null=True)
 
     def __str__(self):
-        return f("{self.PhoneNumber}  has sent {self.Amount}  >> {self.MpesaReceiptNumber}")
+        return f"{self.PhoneNumber}  has sent {self.Amount}  >> {self.MpesaReceiptNumber}"
