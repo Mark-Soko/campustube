@@ -22,7 +22,7 @@ def lipa_na_mpesa():
         "PartyA": keys.phone_number,
         "PartyB": keys.business_shortCode,
         "PhoneNumber": keys.phone_number,
-        "CallBackURL": "https://fast-retreat-95570.herokuapp.com/api/payments/lnm",
+        "CallBackURL": "https://fast-retreat-95570.herokuapp.com/api/payments/lnm/",
         "AccountReference": "25718282544",
         "TransactionDesc": "Pay for this content "
     }
