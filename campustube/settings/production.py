@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'storages',
+
+    'mpesa',
 ]
 
 MIDDLEWARE = [
@@ -137,8 +140,20 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static-cdn-local")
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.isAuthenticatedOrAnonReadOnly'
+    ]
+}
+
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_REPLACE_HTTPS_REFERER      = True
