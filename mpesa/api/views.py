@@ -26,7 +26,7 @@ class LNMcallbackurlAPIView(CreateAPIView):
                                                         {'Name': 'MpesaReceiptNumber', 'Value': 'NCB1FW1DFZ'},
                                                         {'Name': 'Balance'},
                                                         {'Name': 'TransactionDate', 'Value': 20190311190244},
-                                                        {'Name': 'PhoneNumber', 'Value': 254718821114}
+                                                        {'Name': 'PhoneNumber', 'Value': 254718282544}
                                                         ]
                                             }
                                             }
@@ -78,3 +78,6 @@ class LNMcallbackurlAPIView(CreateAPIView):
         )
 
         myLNMOnlinemodel.save()
+
+        from rest_framework.response import Response
+        return Response({"OurResultDesc": "Yeah it worked bro"})
