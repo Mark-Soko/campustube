@@ -4,7 +4,7 @@ from mpesa.models import LNMOnline
 # Register your models here.
    
 
-class myLNMOnlineAdmin(admin.modelAdmin):
+class myLNMOnlineAdmin(admin.ModelAdmin):
     list_display =("PhoneNumber","Amount","MpesaReceiptNumber", "TransactionDate")
 
 
