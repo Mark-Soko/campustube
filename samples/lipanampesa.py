@@ -18,12 +18,12 @@ def lipa_na_mpesa():
         "Password": decode_string,
         "Timestamp": formarted_time,
         "TransactionType": "CustomerPayBillOnline",
-        "Amount": "1",
+        "Amount": "2",
         "PartyA": keys.phone_number,
         "PartyB": keys.business_shortCode,
         "PhoneNumber": keys.phone_number,
         "CallBackURL": "https://fast-retreat-95570.herokuapp.com/api/payments/lnm/",
-        "AccountReference": "25718282544",
+        "AccountReference": "aware test",
         "TransactionDesc": "Pay for this content "
     }
 
