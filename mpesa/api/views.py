@@ -12,7 +12,7 @@ class LNMcallbackurlAPIView(CreateAPIView):
 
     def create(self,request):
         print(request.data,"This is request.data")
-       """
+        """
         {'Body': 
             {'stkCallback': 
                {'MerchantRequestID': '42432-14242808-1',
@@ -33,7 +33,7 @@ class LNMcallbackurlAPIView(CreateAPIView):
         checkout_request_id = request.data["Body"]["stkCallback"]["CheckoutRequestID"]
         result_code = request.data["Body"]["stkCallback"]["ResultCode"]
         result_description = request.data["Body"]["stkCallback"]["ResultDesc"]
-        
+
         amount = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][0]["Value"]
         print(amount, "this should be an amount")
 
