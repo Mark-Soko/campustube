@@ -1,13 +1,13 @@
 import datetime
-AWS_ACCESS_KEY_ID = "AKIAZXU3EDE44JA54ZGN"
-AWS_SECRET_ACCESS_KEY = "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"
+AWS_ACCESS_KEY_ID = ""
+AWS_SECRET_ACCESS_KEY = ""
 AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = False
 
 DEFAULT_FILE_STORAGE = 'campustube.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'campustube.aws.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'campus-tube'
+AWS_STORAGE_BUCKET_NAME = ''
 S3DIRECT_REGION = 'US East (N. Virginia) us-east-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
