@@ -68,6 +68,7 @@ class LNMcallbackurlAPIView(CreateAPIView):
         myLNMOnlinemodel = LNMOnline.objects.create(
             CheckoutRequestID=checkout_request_id,
             MerchantRequestID=merchant_request_id,
+            Amount = amount,
             ResultCode=result_code,
             ResultDesc=result_description,
             MpesaReceiptNumber=mpesa_receipt_number,
