@@ -138,11 +138,12 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static-cdn-local")
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly"
     ]
 }
 
