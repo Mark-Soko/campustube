@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'storages',
 
     'mpesa',
+    'musicContent',
 ]
 
 MIDDLEWARE = [
