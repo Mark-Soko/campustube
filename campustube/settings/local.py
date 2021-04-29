@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     
     'mpesa',
+    'musicContent',
+    
 ]
 
 MIDDLEWARE = [
@@ -83,12 +85,18 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'campustube',
         'USER': 'postgres',
-        'PASSWORD': '86cbAznG',
+        'PASSWORD': '@86cbAznG',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
-
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

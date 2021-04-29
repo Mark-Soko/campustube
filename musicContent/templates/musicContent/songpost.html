@@ -1,0 +1,61 @@
+{%extends 'musicContent/basic.html'%}
+{% block title%}All Songs{% endblock %}
+
+{% block body %}
+
+{% if message%}
+<script>
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '{{message}}',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7" style="padding-top: 3%;">
+            <video class="embed-responsive embed-responsive-16by9"controls poster="https://api.time.com/wp-content/uploads/2018/04/listening-to-music-headphones.jpg?quality=85&w=1024&h=512&crop=1" style="padding-top: 2%;">
+                <source src="/media/{{song.song}}" type="video/mp4">
+            </video>
+            <li class="list-group-item"><h3 style="padding-top: 6%; font-weight: 550; color: green;">{{song.name}}</h3></li>
+            
+        </div>
+        <div class="col-md-4">
+
+
+            <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item"><h5 style="padding-top: 2%; font-weight: 550;">Category: {{song.tags}}</h5></li>
+                <li class="list-group-item"><h5 style="padding-top: 2%; font-weight: 550;">Singer: {{song.singer}}</h5></li>
+            </ul>
+
+            
+            <img src="{{song.image}}" alt="" height="250px" width="350px"> 
+
+            <div style="padding-top: 2%;">
+
+            <div class="row" style="padding-left: 3%;">
+            <form action="/watchlater" method="POST">{% csrf_token %}
+            <input type="hidden" name="video_id" value="{{song.song_id}}">
+            <button type="submit" class="btn btn-outline-danger" id="submit_btn">Add to Listen Later</button>
+            </form>
+            <a download href="/media/{{song.song}}" style="padding-left: 1%;"><button class="btn btn-outline-danger">Download Song</button></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+</script>
+
+{% endblock %}
+{% block js %}
+
+{% endblock%}
